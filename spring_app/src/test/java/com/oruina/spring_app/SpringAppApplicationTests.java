@@ -1,10 +1,10 @@
-package com.unla.sistem;
+package com.oruina.spring_app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SistemApplicationTests {
+class SpringAppApplicationTests {
 
 	@Test
 	void contextLoads() {
