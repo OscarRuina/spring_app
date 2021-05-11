@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login</title>
+	<!-- Bootstrap Core CSS -->
+	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Custom Styles for this template -->
+	<link href="/css/modern-business.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="display-5">Login</h1>
+			<form th:action="@{/loginprocess}" method="post">
+				<input type="text" name="username" id="username" placeholder="username">
+				<input type="password" name="password" id="password" placeholder="password">
+				<input type="submit">
+				<div th:if="${error != null}" class="alert alert-danger">
+					Invalid username or password
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Bootstrap Core Javascript -->
+	<script src="/vendor/jquery/jquery.min.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
