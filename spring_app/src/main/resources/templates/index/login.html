@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/login.css" th:href="@{/css/login.css}">
+
+  </head>
+  <body>
+    <div class="modal-dialog text-center">
+      <div class="col-sm-8 main-section">
+        <div class="modal-content">
+          <form class="col-12" th:action="@{/login}" method="post">
+            <div class="form-group" id="user-group">
+              <input type="text" class="form-control" name="username" placeholder="username">
+            </div>
+            <div class="form-group" id="password-group">
+              <input type="password" class="form-control" name="password" placeholder="password">
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
+          </form>
+          <div class="col-12 forgot">
+            <a href="#">Recordar Contraseña</a>
+          </div>
+          <div th:if="${param.error}" class="alert alert-danger" role="alert">
+            Invalid username or password.
+          </div>
+          <div th:if="${param.logout}" class="alert alert-success" role="alert">
+            You have been logged out.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
